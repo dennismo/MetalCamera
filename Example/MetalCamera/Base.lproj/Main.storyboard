@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i2R-Nq-7yd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i2R-Nq-7yd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,7 +16,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0pk-cd-X0F">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SampleCell" id="qKf-Zh-2EW">
                                 <rect key="frame" x="0.0" y="28" width="414" height="60"/>
@@ -48,7 +50,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Evk-IO-BY1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Evk-IO-BY1">
                                 <rect key="frame" x="307" y="94" width="87" height="30"/>
                                 <state key="normal" title="Record Start"/>
                                 <connections>
@@ -56,6 +58,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="vSZ-Dv-hX4"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="OMp-0Q-joa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="6io-3g-wOS"/>
@@ -65,7 +68,6 @@
                             <constraint firstAttribute="bottom" secondItem="OMp-0Q-joa" secondAttribute="bottom" id="qdF-CF-yBO"/>
                             <constraint firstItem="OMp-0Q-joa" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="xpm-3e-Yvp"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="vSZ-Dv-hX4"/>
                     </view>
                     <connections>
                         <outlet property="preview" destination="OMp-0Q-joa" id="FZu-0s-gXM"/>
@@ -89,6 +91,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Qv-WL-Vfp"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wcx-Nl-AKX" firstAttribute="top" secondItem="eN5-7f-C89" secondAttribute="top" id="3Of-Db-eTF"/>
@@ -96,7 +99,6 @@
                             <constraint firstAttribute="trailing" secondItem="wcx-Nl-AKX" secondAttribute="trailing" id="quR-mN-NY9"/>
                             <constraint firstAttribute="bottom" secondItem="wcx-Nl-AKX" secondAttribute="bottom" id="rJd-0k-990"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Qv-WL-Vfp"/>
                     </view>
                     <connections>
                         <outlet property="preview" destination="wcx-Nl-AKX" id="CTz-AK-3kQ"/>
@@ -137,6 +139,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="bCF-Zu-RtR"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9mN-ek-jEI" firstAttribute="top" secondItem="jca-ct-7mE" secondAttribute="top" id="Wib-dM-mht"/>
@@ -144,7 +147,6 @@
                             <constraint firstItem="9mN-ek-jEI" firstAttribute="leading" secondItem="jca-ct-7mE" secondAttribute="leading" id="iiG-Pd-q9l"/>
                             <constraint firstAttribute="trailing" secondItem="9mN-ek-jEI" secondAttribute="trailing" id="vTC-Dd-tJo"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="bCF-Zu-RtR"/>
                     </view>
                     <connections>
                         <outlet property="preview" destination="9mN-ek-jEI" id="cNo-q9-Nep"/>
@@ -167,6 +169,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="QSa-Ru-hoY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8uJ-RS-0Wz" firstAttribute="leading" secondItem="vaL-tI-DYJ" secondAttribute="leading" id="8T3-fw-5Fw"/>
@@ -174,7 +177,6 @@
                             <constraint firstAttribute="bottom" secondItem="8uJ-RS-0Wz" secondAttribute="bottom" id="G5i-qD-fub"/>
                             <constraint firstAttribute="trailing" secondItem="8uJ-RS-0Wz" secondAttribute="trailing" id="zQQ-ge-gOq"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="QSa-Ru-hoY"/>
                     </view>
                     <connections>
                         <outlet property="preview" destination="8uJ-RS-0Wz" id="Do0-xv-lMX"/>
@@ -184,5 +186,35 @@
             </objects>
             <point key="canvasLocation" x="830" y="805"/>
         </scene>
+        <!--Replace Background Sample View Controller-->
+        <scene sceneID="0Sj-2u-Avb">
+            <objects>
+                <viewController storyboardIdentifier="ReplaceBackgroundSampleViewController" id="XRF-rc-bPm" customClass="ReplaceBackgroundSampleViewController" customModule="MetalCamera_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oVZ-YU-gNy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QYk-eD-s1X" customClass="MetalVideoView" customModule="MetalCamera">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eCg-Bb-gjg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="preview" destination="QYk-eD-s1X" id="oaH-wP-mmU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vZR-KP-Zvj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1585" y="813"/>
+        </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

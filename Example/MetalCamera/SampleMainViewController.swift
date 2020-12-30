@@ -13,6 +13,7 @@ class SampleMainViewController: UITableViewController {
         ("Camera, Composition and Recording","CameraSampleViewController"),
         ("Segmentation","SegmentationSampleViewController"),
         ("Lookup Table", "LookupTableSampleViewController"),
+        ("Replace Background", "ReplaceBackgroundSampleViewController"),
     ]
 
     override func viewDidLoad() {
