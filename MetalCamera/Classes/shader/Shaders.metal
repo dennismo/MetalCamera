@@ -81,6 +81,12 @@ fragment half4 maskFragment(TwoInputVertex fragmentInput [[stage_in]],
     half4 textureColor = inputTexture.sample(quadSampler, fragmentInput.textureCoordinate);
     constexpr sampler quadSampler2;
     half4 textureColor2 = inputTexture2.sample(quadSampler, fragmentInput.textureCoordinate2);
+    
+    if(textureColor2.a > 0) {
+        return textureColor;
+    } else {
+        return half4(0, 0, 0 ,0);
+    }
 
     if(textureColor2.r + textureColor2.g + textureColor2.b > 0) {
         return textureColor;
@@ -113,6 +119,21 @@ fragment float4 segmentation_render_target(Vertex vertex_data [[ stage_in ]],
 
     return float4(0,0,0,1.0);
 };
+
+fragment float4 crop_background_render_target(Vertex vertex_data [[ stage_in ]],
+                                           constant SegmentationValue *segmentation [[ buffer(0) ]],
+                                           constant SegmentationUniform& uniform [[ buffer(1) ]])
+
+{
+    int index = int(vertex_data.position.x) + int(vertex_data.position.y) * uniform.width;
+    if(segmentation[index].classNum == 0) {
+        return float4(0, 0, 0, 0);
+    }
+
+    return float4(0,0,0,1.0);
+};
+
+
 
 fragment half4 lookupFragment(TwoInputVertex fragmentInput [[stage_in]],
                               texture2d<half> inputTexture [[texture(0)]],

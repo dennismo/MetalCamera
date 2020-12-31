@@ -1,8 +1,8 @@
 //
-//  CoreMLHandler.swift
+//  CoreMLBackgroundReplacementHandler.swift
 //  MetalCamera
 //
-//  Created by Eric on 2020/06/12.
+//  Created by Dennis Mo on 30/12/2020.
 //
 
 import Foundation
@@ -10,12 +10,12 @@ import AVFoundation
 import CoreML
 import Vision
 
-public enum ClassificationResultType {
+public enum BackgroundReplacementResultType {
     case mask
     case alphaBlend
 }
 
-public class CoreMLClassifierHandler: CMSampleChain {
+public class CoreMLBackgroundReplacementHandler: CMSampleChain {
     public var targets = TargetContainer<OperationChain>()
     let visionModel: VNCoreMLModel
     let imageCropAndScaleOption: VNImageCropAndScaleOption
@@ -37,7 +37,7 @@ public class CoreMLClassifierHandler: CMSampleChain {
     private var render_target_vertex: MTLBuffer!
     private var render_target_uniform: MTLBuffer!
 
-    public init(_ model: MLModel, imageCropAndScaleOption: VNImageCropAndScaleOption = .centerCrop, dropFrame: Bool = true, maxClasses: Int = 255, resultType: ClassificationResultType = .alphaBlend) throws {
+    public init(_ model: MLModel, imageCropAndScaleOption: VNImageCropAndScaleOption = .centerCrop, dropFrame: Bool = true, maxClasses: Int = 255, resultType: BackgroundReplacementResultType = .mask) throws {
         self.visionModel = try VNCoreMLModel(for: model)
         self.imageCropAndScaleOption = imageCropAndScaleOption
         self.dropFrame = dropFrame
@@ -51,7 +51,7 @@ public class CoreMLClassifierHandler: CMSampleChain {
 
     private func setupPiplineState(_ colorPixelFormat: MTLPixelFormat = .bgra8Unorm, width: Int, height: Int) {
         do {
-            let rpd = try sharedMetalRenderingDevice.generateRenderPipelineDescriptor("vertex_render_target", "segmentation_render_target", colorPixelFormat)
+            let rpd = try sharedMetalRenderingDevice.generateRenderPipelineDescriptor("vertex_render_target", "crop_background_render_target", colorPixelFormat)
             pipelineState = try sharedMetalRenderingDevice.device.makeRenderPipelineState(descriptor: rpd)
 
             render_target_vertex = sharedMetalRenderingDevice.makeRenderVertexBuffer(size: CGSize(width: width, height: height))

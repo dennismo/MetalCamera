@@ -32,7 +32,7 @@ class BaseCameraViewController: UIViewController {
 
 extension BaseCameraViewController {
     func setupCamera() {
-        guard let camera = try? MetalCamera(videoOrientation: .portrait, isVideoMirrored: true) else { return }
+        guard let camera = try? MetalCamera(useMic: true, videoOrientation: .portrait, isVideoMirrored: true) else { return }
         self.camera = camera
         camera-->preview
     }

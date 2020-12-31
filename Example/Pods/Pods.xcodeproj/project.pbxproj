@@ -35,6 +35,8 @@
 		CAB58D89AF8850403E2DEC8F9D87EF67 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53257F74D2D711D8D37C7F56FFAAB16B /* extensions.swift */; };
 		CEC69473AF4E82C84D0E685C2BCE64B8 /* Pods-MetalCamera_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAA8A16A1BC44D126E55BB0344AB854 /* Pods-MetalCamera_Tests-dummy.m */; };
 		D58EAB7DF77B0862AFADF851826E58E0 /* MetalCamera-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 54EC9EBD8435CAE93B7DDAB1C221B2E3 /* MetalCamera-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E600E795259D7C69004F5625 /* CoreMLBackgroundReplacementHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E600E794259D7C69004F5625 /* CoreMLBackgroundReplacementHandler.swift */; };
+		E600E79B259D8624004F5625 /* BackgroundImageCompositor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E600E79A259D8624004F5625 /* BackgroundImageCompositor.swift */; };
 		E91CB34727A2FFE056030A24247EF9DF /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB00265E9EDF8F0D87DE95C0FC283E /* Rotation.swift */; };
 		EEF397BEBD88B124CAADED726B5B4552 /* AudioStreamPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4471C1E4FDA1F4F06D124F9742CC5F9 /* AudioStreamPlayer.swift */; };
 		F5A6EBA784374D8E71EEDA54FA091FE6 /* Gray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074007E8DF41ED8289C23A208C72F32B /* Gray.swift */; };
@@ -109,6 +111,8 @@
 		DF93287442D07DEE4D6BDC98A4F7858D /* Pods-MetalCamera_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MetalCamera_Tests.modulemap"; sourceTree = "<group>"; };
 		E3EB763E6F2E8445CEBDB1D7823EF0B7 /* Pods-MetalCamera_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MetalCamera_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		E4D138DA7FF766178D141A260A19FF76 /* AudioBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioBuffer.swift; sourceTree = "<group>"; };
+		E600E794259D7C69004F5625 /* CoreMLBackgroundReplacementHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLBackgroundReplacementHandler.swift; sourceTree = "<group>"; };
+		E600E79A259D8624004F5625 /* BackgroundImageCompositor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageCompositor.swift; sourceTree = "<group>"; };
 		E65072654929CCB2894C7DCA30C18789 /* MetalRenderingDevice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MetalRenderingDevice.swift; path = MetalCamera/Classes/MetalRenderingDevice.swift; sourceTree = "<group>"; };
 		E860EC594E9CCDD1DEC9E54F83877792 /* record_sample.gif */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.gif; name = record_sample.gif; path = docs/record_sample.gif; sourceTree = "<group>"; };
 		E91314DD68A9978F18990F0B4743C7B6 /* Pods-MetalCamera_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MetalCamera_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 			children = (
 				7D802AC6EEF211D59C69FC4FDC0BC403 /* CoreMLClassifierHandler.swift */,
 				146D87650EFD017B95BE6E2E286E495A /* CoreMLLoader.swift */,
+				E600E794259D7C69004F5625 /* CoreMLBackgroundReplacementHandler.swift */,
 			);
 			name = CoreML;
 			path = MetalCamera/Classes/CoreML;
@@ -330,6 +335,7 @@
 				29C3EC20A6DA1D8E6FC7287F736EFCA8 /* ImageCompositor.swift */,
 				32EB00265E9EDF8F0D87DE95C0FC283E /* Rotation.swift */,
 				07BFE157249EFEBC00C0487D /* Lookup.swift */,
+				E600E79A259D8624004F5625 /* BackgroundImageCompositor.swift */,
 			);
 			name = operations;
 			path = MetalCamera/Classes/operations;
@@ -506,11 +512,13 @@
 				F5A6EBA784374D8E71EEDA54FA091FE6 /* Gray.swift in Sources */,
 				3FDE9709098704C73249706CB1698317 /* ImageCompositor.swift in Sources */,
 				2392E1A66B2323182877710002227762 /* Maths.swift in Sources */,
+				E600E795259D7C69004F5625 /* CoreMLBackgroundReplacementHandler.swift in Sources */,
 				07BFE158249EFEBC00C0487D /* Lookup.swift in Sources */,
 				BE79A0EA8085F9C870241B11190D9724 /* MetalCamera-dummy.m in Sources */,
 				3C21E60337EF95ED72855986A1C8E260 /* MetalCamera.swift in Sources */,
 				158D4D2FF10EAE03821C2BA027518996 /* MetalRenderingDevice.swift in Sources */,
 				2D19CF64ADAC31DE9F6F8BFDCA4E0AF9 /* MetalVideoLoader.swift in Sources */,
+				E600E79B259D8624004F5625 /* BackgroundImageCompositor.swift in Sources */,
 				0796252024A9995100936682 /* Mask.swift in Sources */,
 				809891195594DC2D1B863BE0284CD5A8 /* MetalVideoView.swift in Sources */,
 				AD9B0D7D4A25F3C6E4BBCD61DDBEC82C /* MetalVideoWriter.swift in Sources */,
