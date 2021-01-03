@@ -74,14 +74,16 @@ extension ReplaceBackgroundSampleViewController {
         let compositeFrame = CGRect(x: 0, y: 0, width: 620, height: 620)
         imageCompositor.addCompositeImage(testImage)
         imageCompositor.sourceFrame = compositeFrame
-//        let alphaBlend = AlphaBlend()
-//        alphaBlend.alphaValue = 1.0
+        
+        let imageCompositor2 = ImageCompositor(baseTextureKey: camera.sourceKey)
+        imageCompositor2.addCompositeImage(testImage)
+        imageCompositor2.sourceFrame = compositeFrame
         do {
             let modelHandler = try CoreMLBackgroundReplacementHandler(model)
             camera.removeTarget(preview)
-            camera-->modelHandler-->preview
+//            camera-->modelHandler-->preview
 //            camera-->imageCompositor-->preview
-//            camera-->modelHandler-->imageCompositor-->preview
+            camera-->modelHandler-->imageCompositor-->preview
 //            camera-->preview
         } catch{
             debugPrint(error)

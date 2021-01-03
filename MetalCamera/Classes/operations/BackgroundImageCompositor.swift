@@ -9,6 +9,7 @@
 import Foundation
 import MetalKit
 
+
 public class BackgroundImageCompositor: OperationChain {
     public let targets = TargetContainer<OperationChain>()
 
@@ -37,7 +38,7 @@ public class BackgroundImageCompositor: OperationChain {
 
     private func setupPiplineState(_ colorPixelFormat: MTLPixelFormat = .bgra8Unorm) {
         do {
-            let rpd = try sharedMetalRenderingDevice.generateRenderPipelineDescriptor("two_vertex_render_target", "alphaBlendFragment", colorPixelFormat)
+            let rpd = try sharedMetalRenderingDevice.generateRenderPipelineDescriptor("two_vertex_render_target", "backgroundFragment", colorPixelFormat)
             pipelineState = try sharedMetalRenderingDevice.device.makeRenderPipelineState(descriptor: rpd)
         } catch {
             debugPrint(error)
@@ -56,11 +57,11 @@ public class BackgroundImageCompositor: OperationChain {
         }
     }
 
-    private func loadRenderTargetVertex(_ baseTextureSize: CGSize) {
-        guard let sourceFrame = sourceFrame else { return }
-        render_target_vertex = sharedMetalRenderingDevice.makeRenderVertexBuffer(sourceFrame.origin, size: sourceFrame.size)
-        render_target_uniform = sharedMetalRenderingDevice.makeRenderUniformBuffer(baseTextureSize)
-    }
+//    private func loadRenderTargetVertex(_ baseTextureSize: CGSize) {
+//        guard let sourceFrame = sourceFrame else { return }
+//        render_target_vertex = sharedMetalRenderingDevice.makeRenderVertexBuffer(sourceFrame.origin, size: sourceFrame.size)
+//        render_target_uniform = sharedMetalRenderingDevice.makeRenderUniformBuffer(baseTextureSize)
+//    }
     
     private func generateTextureBuffer(_ width: Int, _ height: Int, _ targetWidth: Int, _ targetHeight: Int) -> MTLBuffer? {
         let targetRatio = Float(targetWidth)/Float(targetHeight)
@@ -85,6 +86,7 @@ public class BackgroundImageCompositor: OperationChain {
     }
     
     private func baseTextureAvailable(_ texture: Texture) {
+        let alphaValue = 0.5
         let source1 = texture
         guard let source2 = try? Texture(texture: sourceTexture!, timestamp: nil) else {
             // Bypass received texture if there is no source texture.
@@ -110,7 +112,7 @@ public class BackgroundImageCompositor: OperationChain {
 
         let renderPassDescriptor = MTLRenderPassDescriptor()
         let attachment = renderPassDescriptor.colorAttachments[0]
-        attachment?.clearColor = MTLClearColorMake(1, 0, 0, 1)
+        attachment?.clearColor = MTLClearColorMake(0, 1, 0, 1)
         attachment?.texture = outputTexture.texture
         attachment?.loadAction = .clear
         attachment?.storeAction = .store
@@ -131,12 +133,12 @@ public class BackgroundImageCompositor: OperationChain {
 
         commandEncoder?.setFragmentTexture(source1.texture, index: 0)
         commandEncoder?.setFragmentTexture(source2.texture, index: 1)
-        let uniformBuffer = sharedMetalRenderingDevice.device.makeBuffer(bytes: [1],
+        let uniformBuffer = sharedMetalRenderingDevice.device.makeBuffer(bytes: [alphaValue],
                                                                          length: 1 * MemoryLayout<Float>.size,
                                                                          options: [])!
         commandEncoder?.setFragmentBuffer(uniformBuffer, offset: 0, index: 1)
 
-//        commandEncoder?.drawPrimitives(type: .triangleStrip, vertexStart: 0, vertexCount: 4)
+        commandEncoder?.drawPrimitives(type: .triangleStrip, vertexStart: 0, vertexCount: 4)
         commandEncoder?.endEncoding()
         commandBuffer?.commit()
 
