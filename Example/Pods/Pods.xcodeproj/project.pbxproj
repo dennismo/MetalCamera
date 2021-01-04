@@ -37,6 +37,8 @@
 		D58EAB7DF77B0862AFADF851826E58E0 /* MetalCamera-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 54EC9EBD8435CAE93B7DDAB1C221B2E3 /* MetalCamera-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E600E795259D7C69004F5625 /* CoreMLBackgroundReplacementHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E600E794259D7C69004F5625 /* CoreMLBackgroundReplacementHandler.swift */; };
 		E600E79B259D8624004F5625 /* BackgroundImageCompositor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E600E79A259D8624004F5625 /* BackgroundImageCompositor.swift */; };
+		E6EE3E8C25A2BA820034F472 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EE3E8B25A2BA820034F472 /* Hue.swift */; };
+		E6EE3E9125A2BC2D0034F472 /* ShaderUniformSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EE3E9025A2BC2D0034F472 /* ShaderUniformSettings.swift */; };
 		E91CB34727A2FFE056030A24247EF9DF /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB00265E9EDF8F0D87DE95C0FC283E /* Rotation.swift */; };
 		EEF397BEBD88B124CAADED726B5B4552 /* AudioStreamPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4471C1E4FDA1F4F06D124F9742CC5F9 /* AudioStreamPlayer.swift */; };
 		F5A6EBA784374D8E71EEDA54FA091FE6 /* Gray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074007E8DF41ED8289C23A208C72F32B /* Gray.swift */; };
@@ -114,6 +116,8 @@
 		E600E794259D7C69004F5625 /* CoreMLBackgroundReplacementHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLBackgroundReplacementHandler.swift; sourceTree = "<group>"; };
 		E600E79A259D8624004F5625 /* BackgroundImageCompositor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageCompositor.swift; sourceTree = "<group>"; };
 		E65072654929CCB2894C7DCA30C18789 /* MetalRenderingDevice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MetalRenderingDevice.swift; path = MetalCamera/Classes/MetalRenderingDevice.swift; sourceTree = "<group>"; };
+		E6EE3E8B25A2BA820034F472 /* Hue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hue.swift; sourceTree = "<group>"; };
+		E6EE3E9025A2BC2D0034F472 /* ShaderUniformSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderUniformSettings.swift; sourceTree = "<group>"; };
 		E860EC594E9CCDD1DEC9E54F83877792 /* record_sample.gif */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.gif; name = record_sample.gif; path = docs/record_sample.gif; sourceTree = "<group>"; };
 		E91314DD68A9978F18990F0B4743C7B6 /* Pods-MetalCamera_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MetalCamera_Example-frameworks.sh"; sourceTree = "<group>"; };
 		EEE223A4A7CE12AE93D0B04555E7C25B /* Pods-MetalCamera_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MetalCamera_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -314,6 +318,7 @@
 				C2B839595EFD0A9580F516F2FB207FA4 /* MetalVideoWriter.swift */,
 				891453953FB2A93F9E3641E71B5C62B1 /* OperationChain.swift */,
 				81E68363B62CE2509E598B9ECB92CEA9 /* Texture.swift */,
+				E6EE3E9025A2BC2D0034F472 /* ShaderUniformSettings.swift */,
 				7866CE42C309F41DFF87B64AF9C30406 /* audio */,
 				6A5B971D70978014DBC228BC959A275D /* CoreML */,
 				F7FD97E88C94412ED6643A4168B95A8B /* operations */,
@@ -336,6 +341,7 @@
 				32EB00265E9EDF8F0D87DE95C0FC283E /* Rotation.swift */,
 				07BFE157249EFEBC00C0487D /* Lookup.swift */,
 				E600E79A259D8624004F5625 /* BackgroundImageCompositor.swift */,
+				E6EE3E8B25A2BA820034F472 /* Hue.swift */,
 			);
 			name = operations;
 			path = MetalCamera/Classes/operations;
@@ -507,8 +513,10 @@
 				EEF397BEBD88B124CAADED726B5B4552 /* AudioStreamPlayer.swift in Sources */,
 				10CA069AB735643C38199254F6355FEE /* Colors.swift in Sources */,
 				831E3E81D6CB767FB0DA038C67AC3D78 /* CoreMLClassifierHandler.swift in Sources */,
+				E6EE3E8C25A2BA820034F472 /* Hue.swift in Sources */,
 				A68CD1FB64D762F5BF7AA707A9A091B5 /* CoreMLLoader.swift in Sources */,
 				CAB58D89AF8850403E2DEC8F9D87EF67 /* extensions.swift in Sources */,
+				E6EE3E9125A2BC2D0034F472 /* ShaderUniformSettings.swift in Sources */,
 				F5A6EBA784374D8E71EEDA54FA091FE6 /* Gray.swift in Sources */,
 				3FDE9709098704C73249706CB1698317 /* ImageCompositor.swift in Sources */,
 				2392E1A66B2323182877710002227762 /* Maths.swift in Sources */,
