@@ -7,6 +7,24 @@
 [![License](https://img.shields.io/cocoapods/l/MetalCamera.svg?style=flat)](https://cocoapods.org/pods/MetalCamera)
 [![Platform](https://img.shields.io/cocoapods/p/MetalCamera.svg?style=flat)](https://cocoapods.org/pods/MetalCamera)
 
+## Dennis' Fork
+I'm forking this MetalCamera repo to use on my personal project, more specifically. I want to achieve realtime background replacement using the segmentation map CoreML service. On top of background replacement, I also want to investigate video composition with masks, as well as adding filters to specific masked areas. 
+
+## RoadMap
+
+- [x] Crop out humans and objects from the background
+- [x] Composite an image to the back of the cropped face
+- [x] Add filter to the cropped face
+- [x] Add hue filter
+- [ ] Replace background with another video
+- [ ] Add ability to pass uniform to the shader functions
+- [ ] Composite 2 cropped out videos onto one background
+
+
+
+**Below is the original README**
+
+
 ## Motivation
 MetalCamera is an open source project for performing GPU-accelerated image and video processing on Mac and iOS. 
 
