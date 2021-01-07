@@ -205,18 +205,12 @@ typedef struct
     float hue;
 } HueUniform;
 
-struct SingleInputVertexIO
-{
-    float4 position [[position]];
-    float2 textureCoordinate [[user(texturecoord)]];
-};
-
-fragment half4 hueFragment(SingleInputVertexIO fragmentInput [[stage_in]],
-                             texture2d<half> inputTexture [[texture(0)]],
-                             constant HueUniform& uniform [[ buffer(1) ]])
+fragment half4 hueFragment(Vertex fragmentInput [[stage_in]],
+                             texture2d<half> inputTexture [[texture(0)]])
+//                             constant HueUniform& uniform [[ buffer(1) ]])
 {
     constexpr sampler quadSampler;
-    half4 color = inputTexture.sample(quadSampler, fragmentInput.textureCoordinate);
+    half4 color = inputTexture.sample(quadSampler, fragmentInput.text_coord);
     
     // Convert to YIQ
     float YPrime = dot (color, kRGBToYPrime);
@@ -228,7 +222,8 @@ fragment half4 hueFragment(SingleInputVertexIO fragmentInput [[stage_in]],
     float chroma = sqrt(I * I + Q * Q);
     
     // Make the user's adjustments
-    hue += (-uniform.hue); //why negative rotation?
+//    hue += (-uniform.hue); //why negative rotation?
+    hue += (-90.0);
     
     // Convert back to YIQ
     Q = chroma * sin (hue);
